@@ -1,0 +1,38 @@
+.loginWrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 20vh;
+  // position: relative;
+  .loginForm {
+    width: 400px;
+    padding: 30px;
+    padding-top: 50px;
+    transition: .3s;
+    // text-align: center;
+    border-radius: 20px;
+    &:hover{
+      border-color: #8245eb;
+      box-shadow: 1px 1px 20px 2px #d0bcf3;
+    }
+    .loginTitle {
+      width: 100%;
+      text-align: center;
+    }
+
+    .loginLoading{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      
+    }
+  }
+  .loginFormForgot {
+    float: right;
+  }
+  .ant-col-rtl .login-form-forgot {
+    float: left;
+  }
+  .loginFormButton {
+    width: 100%;
+  }
+}
