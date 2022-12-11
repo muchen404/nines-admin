@@ -3,4 +3,9 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+
+  .layoutSidebarLogo{
+    filter: grayscale(1);
+    filter: hue-rotate(50deg);
+  }
 }

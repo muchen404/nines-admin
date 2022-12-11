@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import {
-  DesktopOutlined,
-  FileOutlined,
-  PieChartOutlined,
+  BarsOutlined,
   TeamOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Button, Menu } from 'antd';
+import { Menu } from 'antd';
+import styles from './style.module.scss'
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -26,25 +25,35 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem('Option 1', '1', <PieChartOutlined />),
-  getItem('Option 2', '2', <DesktopOutlined />),
-  getItem('User', 'sub1', <UserOutlined />, [
-    getItem('Tom', '3'),
-    getItem('Bill', '4'),
-    getItem('Alex', '5'),
-  ]),
-  getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-  getItem('Files', '9', <FileOutlined />),
+  getItem('用户管理', '1', <UserOutlined />),
+  getItem('角色管理', '2', <TeamOutlined />),
+  getItem('菜单管理', '3', <BarsOutlined />),
 ];
 
-const App: React.FC = () => {
-  const [collapsed, setCollapsed] = useState(false);
+type SideMenuType = (props: { 
+  onMenuSelect: (item: any) => void 
+}) => React.ReactElement
+
+const SideMenu: SideMenuType = ({ onMenuSelect }) => {
+
+  function onMenuItemSelected(selectedItem: any) {
+    onMenuSelect(selectedItem)
+  }
 
   return (
     <div>
-      <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
+      <div className={styles.SidebarLogo}>
+        <img style={{ height: '40px' }} src="/admin-logo.png" alt="" />
+      </div>
+      <Menu 
+        theme="dark" 
+        defaultSelectedKeys={['1']} 
+        mode="inline" 
+        items={items} 
+        onSelect={onMenuItemSelected}
+      />
     </div>
   );
 };
 
-export default App;
+export default SideMenu;
