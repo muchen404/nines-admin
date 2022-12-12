@@ -18,7 +18,7 @@ export default function Dashboard () {
 
   return <>
     <Layout className={styles.layoutWrapper}>
-      <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+      <Sider collapsible collapsed={collapsed} collapsedWidth={75} onCollapse={(value) => setCollapsed(value)}>
         <SideBarNav onMenuSelect={onMenuselect}/>
       </Sider>
       <Layout className={styles.siteLayout}>

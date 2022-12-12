@@ -49,7 +49,7 @@ const SideMenu: SideMenuType = ({ onMenuSelect }) => {
         theme="dark" 
         defaultSelectedKeys={['1']} 
         mode="inline" 
-        items={items} 
+        items={items}
         onSelect={onMenuItemSelected}
       />
     </div>
