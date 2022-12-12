@@ -75,7 +75,7 @@ export default function Register() {
             <Button type="primary" htmlType="submit" className={styles.loginFormButton}>
               Sign up
             </Button>
-            Or <Link to="/login">login now!</Link>
+            <span className={styles.text}>Or</span> <Link to="/login">login now!</Link>
           </Form.Item>
         </Form>
       </Spin>

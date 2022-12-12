@@ -38,8 +38,10 @@ export default function Login() {
     navigate('/dashboard')
   }
 
-  return <>
-    <div className={styles.loginWrapper}>
+  return <div className={styles.loginWrapper}>
+    
+    <div className={styles.loginBackground} />
+    <div className={styles.loginContent}>
       <Spin spinning={false}>
         <Form
           name="normal_login"
@@ -48,7 +50,10 @@ export default function Login() {
           initialValues={{ remember: true }}
           onFinish={onFinish}
         >
-          <h1 className={styles.loginTitle} onClick={() => {goDashboard()}} >Sunny Admin</h1>
+          <div className={styles.loginLogo}>
+            <img src="/admin-logo.png" alt="" />
+          </div>
+          <h1 className={styles.loginTitle} onClick={() => {goDashboard()}} >Hi, Welcome to Nines Admin</h1>
           {/* <h6>{ JSON.stringify(data) }</h6> */}
           <Form.Item
             name="username"
@@ -72,7 +77,7 @@ export default function Login() {
           </Form.Item>
           <Form.Item>
             <Form.Item name="remember" valuePropName="checked" noStyle>
-              <Checkbox>Remember me</Checkbox>
+              <Checkbox className={styles.text}>Remember me</Checkbox>
             </Form.Item>
 
             <a className={styles.loginFormForgot}>
@@ -84,10 +89,12 @@ export default function Login() {
             <Button type="primary" htmlType="submit" className={styles.loginFormButton}>
               Log in
             </Button>
-            Or <Link to="/register">register now!</Link>
+            <span className={styles.text}>Or</span> <Link to="/register">register now!</Link>
           </Form.Item>
         </Form>
       </Spin>
+      <div className={styles.loginIntro}>
+      </div>
     </div>
-  </>
+  </div>
 }

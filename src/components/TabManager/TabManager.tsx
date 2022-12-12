@@ -3,15 +3,15 @@ import { Tabs, theme } from 'antd';
 import './reset-antd.scss'
 
 const initialItems = [
-  { label: 'Tab 1', children: <TabWindow />, key: '1', 
+  { label: 'Dashboard', children: <TabWindow />, key: '1', 
   closable: false },
-  { label: 'Tab 2', children: <TabWindow />, key: '2' },
-  {
-    label: 'Tab 3',
-    children: <TabWindow />,
-    key: '3',
-    closable: false,
-  },
+  // { label: 'Tab 2', children: <TabWindow />, key: '2' },
+  // {
+  //   label: 'Tab 3',
+  //   children: <TabWindow />,
+  //   key: '3',
+  //   closable: false,
+  // },
 ];
 
 function TabWindow() {

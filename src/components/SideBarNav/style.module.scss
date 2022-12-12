@@ -1,6 +1,6 @@
 .SidebarLogo{
-  filter: grayscale(1);
-  filter: hue-rotate(50deg);
+  // filter: grayscale(1) !important;
+  filter: hue-rotate(50deg) !important;
   margin: 16px;
   margin-bottom: 20px;
   overflow: hidden;
