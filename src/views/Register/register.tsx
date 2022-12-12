@@ -31,9 +31,10 @@ export default function Register() {
     console.log('Received values of form: ', registerData);
     run(registerData)
   };
-  return <>
+  return <div className={styles.loginWrapper}>
     {contextHolder}
-    <div className={styles.loginWrapper}>
+    <div className={styles.loginBackground} />
+    <div className={styles.loginContent}>
       
       <Spin spinning={loading}>
         <Form
@@ -42,7 +43,10 @@ export default function Register() {
           initialValues={{ remember: true }}
           onFinish={onFinish}
         >
-          <h1 className={styles.loginTitle}>Sunny Admin</h1>
+          <div className={styles.loginLogo}>
+            <img src="/admin-logo.png" alt="" />
+          </div>
+          <h1 className={styles.loginTitle}>Sign up for Nines admin</h1>
           {/* <h6>{data}</h6> */}
           <Form.Item
             name="username"
@@ -81,5 +85,5 @@ export default function Register() {
       </Spin>
       
     </div>
-  </>
+  </div>
 }

@@ -1,17 +1,42 @@
+$borderRadius: 10px;
+$position: -30px;
 .loginWrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  // background-color: #000;
+}
+
+.loginContent {
   display: flex;
   justify-content: center;
-  padding-top: 20vh;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: .3s;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: $borderRadius + 8;
+  background-color: #fff;
+  .loginLogo{
+    opacity: 1;
+    text-align: center;
+    filter: hue-rotate(50deg) !important;
+    img {
+      width: 120px;
+    }
+  }
   .loginForm {
+    opacity: 1;
     width: 400px;
     padding: 30px;
     padding-top: 50px;
     transition: .3s;
-    // text-align: center;
     border-radius: 20px;
+    
     &:hover{
-      border-color: #8245eb;
-      box-shadow: 1px 1px 20px 2px #d0bcf3;
+      border-color: rgb(130, 69, 235);
+      box-shadow: 1px 1px 20px 2px #7a6f8f;
     }
     .loginTitle {
       width: 100%;
@@ -27,4 +52,21 @@
   .loginFormButton {
     width: 100%;
   }
+}
+
+
+.loginBackground{
+  // filter: invert(100%) !important;
+  overflow: hidden;
+  // width: 110%;
+  // height: 110%;
+  top: $position;
+  left: $position;
+  bottom: $position;
+  right: $position;
+  background: linear-gradient(rgba(212, 176, 230, 0.9), rgba(130, 69, 235, .9)), url(/login-background.jpeg) ;
+  background-size: 110% 110%;
+  z-index: 1;
+  position: fixed;
+  // opacity: .2;
 }

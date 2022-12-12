@@ -32,6 +32,7 @@ export default function Login() {
 
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values)
+    navigate('/dashboard')
   };
 
   function goDashboard() {
@@ -39,7 +40,6 @@ export default function Login() {
   }
 
   return <div className={styles.loginWrapper}>
-    
     <div className={styles.loginBackground} />
     <div className={styles.loginContent}>
       <Spin spinning={false}>
@@ -93,8 +93,8 @@ export default function Login() {
           </Form.Item>
         </Form>
       </Spin>
-      <div className={styles.loginIntro}>
-      </div>
+      {/* <div className={styles.loginIntro}>
+      </div> */}
     </div>
   </div>
 }
